@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Sidebar from './Sidebar'
+import MovieList from './MoviesList';
+import Home from './Home'
+import {Container,Col,Row} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <Home></Home>
+<Container>
+   <Row>
+     <Col md={4}>
+      
+     </Col>
+     <MovieList></MovieList>
+     <Col md={8}>
+     </Col>
+</Row>
+
+      </Container>
     </div>
   );
 }
