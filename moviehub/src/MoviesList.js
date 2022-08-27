@@ -26,7 +26,7 @@ const MoviesList = ()=>{
 <td>{info.language}</td>
 <td>{info.genere}</td>
 <td>{info.TotalLocations}</td>
-<td><button  type="button"  class="btn btn-outline-success" >Show more</button></td>
+<td><button  type="button"  class="btn btn-outline-primary" >Show more</button></td>
 </tr>
 
             );
