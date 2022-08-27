@@ -1,5 +1,7 @@
 import React ,{useState }from 'react';
-import { Table } from 'reactstrap';
+import { Table ,Button} from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const MoviesList = ()=>{
 
     const[movies,setMovie]=useState([
@@ -12,7 +14,7 @@ const MoviesList = ()=>{
         
         ]); //creating data
 
-const index=0;
+      
         const tableRows=movies.map((info)=>
         {
             
@@ -24,6 +26,7 @@ const index=0;
 <td>{info.language}</td>
 <td>{info.genere}</td>
 <td>{info.TotalLocations}</td>
+<td><button  type="button"  class="btn btn-outline-success" >Show more</button></td>
 </tr>
 
             );
@@ -41,6 +44,7 @@ const index=0;
             <th>Language</th>
             <th>Genere</th>
             <th>Total no of locations</th>
+            <th>View Details</th>
           </tr>
         </thead>
         <tbody>

@@ -1,26 +1,38 @@
 
 import './App.css';
 import Sidebar from './Sidebar'
-import MovieList from './MoviesList';
+import MoviesList from './MoviesList';
 import Home from './Home'
 import {Container,Col,Row} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import AddMovie from './AddMovie';
+
+import { BrowserRouter as Router,Route} from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-     <Home></Home>
+    
+      <Router>
+<div className="App">
+     <Home></Home><br/>
 <Container>
-   <Row>
-     <Col md={4}>
-      
-     </Col>
-     <MovieList></MovieList>
-     <Col md={8}>
-     </Col>
-</Row>
+   <Row >
+        <Col md={2} >
+      <Sidebar></Sidebar>
+        </Col>
+    
+        <Col md={8}>
+
+          <Route path="/"  component={MoviesList}  exact/>
+          <Route path="/add-movie" component={AddMovie } exact></Route>
+        
+        </Col>
+    </Row>
+
 
       </Container>
-    </div>
+      </div>
+      </Router>
+   
   );
 }
 
