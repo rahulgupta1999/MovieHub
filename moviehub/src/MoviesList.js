@@ -1,9 +1,35 @@
-import React ,{useState }from 'react';
+import React ,{useEffect, useState }from 'react';
 import { Table ,Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import base_url from './api/bootapi';
+import axios from "axios";
 const MoviesList = ()=>{
+useEffect(()=>{
+getAllCoursesFromServer();
+},[]);
 
+const getAllCoursesFromServer=()=>
+{
+    const config = {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
+        }
+      };
+      
+    axios.get(`${base_url}/movies`,config).then(
+(response)=>{
+console.log(response);
+
+},
+(error)=>{
+
+    console.log(error);
+}
+
+
+    )
+}
     const[movies,setMovie]=useState([
         
         {id:1,Name:"Article 370",cast:"Amitab bachan", language:"Hindi" ,genere:"Action" ,TotalLocations:200 },

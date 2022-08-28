@@ -23,7 +23,7 @@ function App() {
         <Col md={8}>
 
           <Route path="/"  component={MoviesList}  exact/>
-          <Route path="/add-movie" component={AddMovie } exact></Route>
+          <Route path="/add-movie" component={AddMovie} exact></Route>
         
         </Col>
     </Row>
