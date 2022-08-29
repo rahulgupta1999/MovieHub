@@ -26,16 +26,11 @@ setMovie(response.data)
     toast("Something went wrong");
     console.log(error);
 }
-
-
-    )
+ )
 }
-    const[movies,setMovie]=useState([
-    
-        
-        
-        ]); //creating data
+    const[movies,setMovie]=useState([ ]); 
 
+//Rendering table rows
         var i=1;
        
         const tableRows=movies.map((info)=>
@@ -79,7 +74,7 @@ const languagesort =()=>
         setMovie(sortedMovies);
      console.log(sortedMovies);
 }
-// sort by Language
+// sort by Name
 const namesort =()=>
 {
     let sortedMovies=[...movies]
@@ -98,6 +93,8 @@ const namesort =()=>
     console.log(sortedMovies)   
     setMovie(sortedMovies);
 }
+
+
 
     return (
       <Table hover>
