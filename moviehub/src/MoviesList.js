@@ -7,6 +7,7 @@ import {toast} from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
 import ViewMovieDetails from './ViewMovieDetails'
 import { Link} from "react-router-dom";
+import { FaSortAlphaUp } from "react-icons/fa";
 const MoviesList = ()=>{
    
 useEffect(()=>{
@@ -56,16 +57,59 @@ setMovie(response.data)
             }
         );
   
+
+
+
+// sort by Language
+const languagesort =()=>
+{
+    let sortedMovies=[...movies]
+
+     sortedMovies.sort((a, b) => { 
+         if(a.language < b.language)
+         {
+             return -1;
+         }
+         if(a.language > b.language)
+         {
+             return 1;
+         }
+         return 0;
+        });
+        setMovie(sortedMovies);
+     console.log(sortedMovies);
+}
+// sort by Language
+const namesort =()=>
+{
+    let sortedMovies=[...movies]
+
+    sortedMovies.sort((a, b) => { 
+        if(a.name < b.name)
+        {
+            return -1;
+        }
+        if(a.name > b.name)
+        {
+            return 1;
+        }
+        return 0;
+       });
+    console.log(sortedMovies)   
+    setMovie(sortedMovies);
+}
+
     return (
       <Table hover>
         <thead>
           <tr>
             <th>Sr.No</th>
-            <th>Movie Name</th>
+            <th>Movie Name&nbsp;< FaSortAlphaUp onClick={namesort}/></th>
             <th>Cast</th>
-            <th>Language</th>
+            <th>Language&nbsp;< FaSortAlphaUp onClick={languagesort}/></th>
             <th>Genre</th>
             <th>View Details</th>
+            
           </tr>
         </thead>
         <tbody>
