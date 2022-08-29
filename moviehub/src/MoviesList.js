@@ -3,27 +3,26 @@ import { Table ,Button} from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import base_url from './api/bootapi';
 import axios from "axios";
+import {toast} from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+import ViewMovieDetails from './ViewMovieDetails'
+import { Link} from "react-router-dom";
 const MoviesList = ()=>{
+   
 useEffect(()=>{
-getAllCoursesFromServer();
+getAllMoviesFromServer();
 },[]);
 
-const getAllCoursesFromServer=()=>
+const getAllMoviesFromServer=()=>
 {
-    const config = {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS"
-        }
-      };
-      
-    axios.get(`${base_url}/movies`,config).then(
+ axios.get(`${base_url}/movies`).then(
 (response)=>{
-console.log(response);
-
+console.log(response.data);
+toast("Movie List has been updated");
+setMovie(response.data)
 },
 (error)=>{
-
+    toast("Something went wrong");
     console.log(error);
 }
 
@@ -31,28 +30,26 @@ console.log(response);
     )
 }
     const[movies,setMovie]=useState([
-        
-        {id:1,Name:"Article 370",cast:"Amitab bachan", language:"Hindi" ,genere:"Action" ,TotalLocations:200 },
-        {id:2,Name:"Hum",cast:"Amitab bachan", language:"Hindi" ,genere:"Action" ,TotalLocations:300 },
-        {id:3,Name:"Boothnath",cast:"Amitab bachan", language:"Hindi" ,genere:"Action" ,TotalLocations:150 }
-       
+    
         
         
         ]); //creating data
 
-      
+        var i=1;
+       
         const tableRows=movies.map((info)=>
         {
             
             return(
+               
 <tr>
-    <td>{info.id}</td>
-<td>{info.Name}</td>
+    <td>{i++}</td>
+<td>{info.name}</td>
 <td>{info.cast}</td>
 <td>{info.language}</td>
-<td>{info.genere}</td>
+<td>{info.genre}</td>
 <td>{info.TotalLocations}</td>
-<td><button  type="button"  class="btn btn-outline-primary" >Show more</button></td>
+<td><a href={`ViewMovieDetails/${info.id}` } class="btn btn-outline-secondary">Show more</a></td>
 </tr>
 
             );
@@ -61,14 +58,14 @@ console.log(response);
         );
   
     return (
-      <Table>
+      <Table hover>
         <thead>
           <tr>
             <th>Sr.No</th>
             <th>Movie Name</th>
             <th>Cast</th>
             <th>Language</th>
-            <th>Genere</th>
+            <th>Genre</th>
             <th>Total no of locations</th>
             <th>View Details</th>
           </tr>

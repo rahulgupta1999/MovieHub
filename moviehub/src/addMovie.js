@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Col, Button, Form, FormGroup, Label, Input} from 'reactstrap';
 import axios from "axios";
 import base_url from './api/bootapi';
+import {Link} from 'react-router-dom'
+
 const AddMovie=()=> {
  
    useEffect(()=>{
@@ -11,7 +13,6 @@ document.title="Add Movie"
    },[]);
     const[movie,setMovie]=useState({});
 
-  
      const handleForm=(m)=>
      {
         setMovie({...movie,id:0})
@@ -24,6 +25,8 @@ axios.post(`${base_url}/addmovie`,data).then(
 (response)=>{
 console.log(response);
 console.log("Sucess");
+setMovie({});
+
 },
 (error)=>{
 
@@ -45,7 +48,7 @@ console.log("Sucess");
                   <Input type="text" name="name" id="Name" placeholder="Movie Name"  onChange={ (m)=>{
                         setMovie({...movie,name:m.target.value})
                       }
-                  } />
+                  }   required/>
                 </Col>
               </FormGroup>
             
@@ -56,7 +59,7 @@ console.log("Sucess");
                   <Input type="textarea" name="Cast" id="Cast" placeholder="Enter cast names" style={{height:150}} onChange={ (m)=>{
                         setMovie({...movie,cast:m.target.value})
                       }
-                  } />
+                  }  required/>
                 </Col>
               </FormGroup>
               <FormGroup row>
@@ -65,7 +68,7 @@ console.log("Sucess");
                 <Label  for="Language" sm={4} size="lg" ></Label>
                 <select className="btn btn-outline-secondary" name="language" id="language" onChange={ (m)=>{
                         setMovie({...movie,language:m.target.value})
-                      }} >
+                      }} required>
                 <option value="#" hidden>&nbsp;Choose a language&nbsp;</option>
                 <option value="English"> English</option>	
                 <option value="Hindi"> Hindi</option>
@@ -92,9 +95,9 @@ console.log("Sucess");
                 <Col sm={8}>
                 
     <Label  for="genre" sm={4} size="lg" ></Label>
-    <select  className="btn btn-outline-secondary" name="genere" id="genere"  onChange={ (m)=>{
+    <select  className="btn btn-outline-secondary" name="genr" id="genre"  onChange={ (m)=>{
                         setMovie({...movie,genre:m.target.value})
-                      }} >
+                      }}  required >
     <option value="#" hidden>&nbsp;&nbsp;&nbsp;Choose a genere&nbsp;&nbsp;&nbsp;</option>
     <option value="Action">Action</option>
     <option value="Comedy">Comedy</option>
@@ -112,14 +115,14 @@ console.log("Sucess");
        <br/>
        <FormGroup row>
        <Col sm={8}>
-                
-              <button  sm={4} type="submit"  className="btn btn-secondary " >Submit</button>&nbsp;&nbsp;&nbsp;
-              <button  sm={4} type="button"  className="btn btn-primary " >Assign Show</button>
+       <button  sm={4} type="submit"  className="btn btn-secondary "  >Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+       <button  sm={4} type="reset"  className="btn btn-danger " >Reset</button>
+          
               </Col>
               </FormGroup>
             </Form>
     
-            </Fragment>
+            </Fragment> 
           );
       }
   

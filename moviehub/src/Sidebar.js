@@ -11,6 +11,7 @@ export default class Sidebar extends React.Component {
           <ListGroupItem  tag="a" href="/" action   className="btn btn-outline-secondary" >Movies</ListGroupItem>
            
           <ListGroupItem  tag="a" href="add-movie" className="btn btn-outline-secondary" action >Add Movie</ListGroupItem>
+          <ListGroupItem  tag="a" href="assignshow" className="btn btn-outline-secondary" action >Add New Show</ListGroupItem>
            </ListGroup>
 
     );
