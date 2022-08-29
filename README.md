@@ -14,7 +14,9 @@
 # Database
 ## MongoDb
 
-!
-12/187179464-96fe6db8-86ab-4450-ab60-63352302983f.png)
-[Screenshot 2022-08-29 at 7 17 11 PM](https://user-images.githubusercontent.com/42772012/187179407-ef312ff3-8436-4e91-b3ee-ddfa7286ee7c.png)
-![Screenshot 2022-08-29 at 7 17 28 PM](https://user-images.githubusercontent.com/427720![Screenshot 2022-08-29 at 7 18 37 PM](https://user-images.githubusercontent.com/42772012/187179673-1b9e4178-9a92-494d-871f-034e4cd930ce.png)
+
+
+![Screenshot 2022-08-29 at 7 19 32 PM](https://user-images.githubusercontent.com/42772012/187179820-e3b6654a-90e1-49e9-aeaa-a76f266202a1.png)
+![Screenshot 2022-08-29 at 7 19 47 PM](https://user-images.githubusercontent.com/42772012/187179863-45df833a-0f6c-4ba0-9ada-cdaff800754c.png)
+![Screenshot 2022-08-29 at 7 19 59 PM](https://user-images.githubusercontent.com/42772012/187179909-7ee8942d-652f-45f7-b706-5937c36bb560.png)
+![Screenshot 2022-08-29 at 7 20 37 PM](https://user-images.githubusercontent.com/42772012/187180034-e874ea9a-8456-41a8-992f-bead4af5a10f.png)
