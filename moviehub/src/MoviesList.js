@@ -48,7 +48,6 @@ setMovie(response.data)
 <td>{info.cast}</td>
 <td>{info.language}</td>
 <td>{info.genre}</td>
-<td>{info.TotalLocations}</td>
 <td><a href={`ViewMovieDetails/${info.id}` } class="btn btn-outline-secondary">Show more</a></td>
 </tr>
 
@@ -66,7 +65,6 @@ setMovie(response.data)
             <th>Cast</th>
             <th>Language</th>
             <th>Genre</th>
-            <th>Total no of locations</th>
             <th>View Details</th>
           </tr>
         </thead>
